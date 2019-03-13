@@ -1,14 +1,16 @@
-<!--
+/**
 @license
 Copyright 2016 Mulesoft.
 
 All rights reserved.
--->
+*/
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {AnypointHoverableMixin} from '../anypoint-hoverable-mixin.js';
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
-<link rel="import" href="../../polymer/polymer-element.html">
-<link rel="import" href="../anypoint-hoverable-behavior.html">
-<dom-module id="hoverable-element">
-  <template>
+class HoverableElement extends AnypointHoverableMixin(PolymerElement) {
+  static get template() {
+    return html`
     <style>
     :host {
       display: inline-block;;
@@ -46,13 +48,11 @@ All rights reserved.
     <span class="hovered">Hovered</span>
     <span class="not-hovered">Not hovered</span>
     <content></content>
-  </template>
-  <script>
-  class HoverableElement extends Anypoint.HoverableBehavior(Polymer.Element) {
-    static get is() {
-      return 'hoverable-element';
-    }
+`;
   }
-  window.customElements.define(HoverableElement.is, HoverableElement);
-  </script>
-</dom-module>
+
+  static get is() {
+    return 'hoverable-element';
+  }
+}
+window.customElements.define(HoverableElement.is, HoverableElement);

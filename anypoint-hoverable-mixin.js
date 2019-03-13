@@ -1,30 +1,16 @@
-<!--
+/**
 @license
 Copyright 2017 Mulesoft.
 
 All rights reserved.
--->
-<link rel="import" href="../polymer/lib/utils/mixin.html">
-<link rel="import" href="../polymer/lib/utils/render-status.html">
-<!--
-@group Anypoint Elements
-@element anypoint-hoverable-behavior
-@demo demo/index.html
--->
-<script>
-(function(global) {
-'use strict';
-if (!global.Anypoint) {
-  /**
-   * @namespace Anypoint
-   */
-  global.Anypoint = {};
-}
+*/
+import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
+import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
 /**
  * **Note:** This is closed software and you can't use it in your projects unless
  * you are a Mulesoft employee working on internall project.
  *
- * Use `Anypoint.AnypointHoverableBehavior` to implement an element that can be hovered.
+ * Use `AnypointHoverableMixin` to implement an element that can be hovered.
  * The control will get a `hovered` attribute when it's hovered by the poiting devide.
  *
  * Be aware that mobile devices will not support hovering as desktop devices and behavior
@@ -34,12 +20,12 @@ if (!global.Anypoint) {
  * @mixinFunction
  * @memberof Anypoint
  */
-Anypoint.HoverableBehavior = Polymer.dedupingMixin((base) => {
+export const AnypointHoverableMixin = dedupingMixin((base) => {
   /**
    * @polymer
    * @mixinClass
    */
-  class Hmixin extends base {
+  class AnypointHoverableMixin extends base {
     static get properties() {
       return {
         /**
@@ -65,7 +51,7 @@ Anypoint.HoverableBehavior = Polymer.dedupingMixin((base) => {
      */
     connectedCallback() {
       super.connectedCallback();
-      Polymer.RenderStatus.afterNextRender(this, () => {
+      afterNextRender(this, () => {
         this.addEventListener('mouseover', this._hoverCallback);
         this.addEventListener('mouseleave', this._leaveCallback);
       });
@@ -91,7 +77,5 @@ Anypoint.HoverableBehavior = Polymer.dedupingMixin((base) => {
       this.hovered = false;
     }
   }
-return Hmixin;
+  return AnypointHoverableMixin;
 });
-})(window);
-</script>

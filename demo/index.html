@@ -6,16 +6,17 @@ Copyright 2016 Mulesoft.
 All rights reserved.
 -->
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
   <title>anypoint-validatable-behavior demo</title>
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="../../anypoint-styles/anypoint-styles.html">
-  <link rel="import" href="hoverable-element.html">
+  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script type="module" src="../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+  <script type="module" src="../../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
+  <script type="module" src="../../../anypoint-styles/anypoint-styles.js"></script>
+  <script type="module" src="./hoverable-element.js"></script>
   <custom-style>
     <style is="custom-style" include="demo-pages-shared-styles">
     :root {
@@ -45,12 +46,13 @@ All rights reserved.
       <hoverable-element></hoverable-element>
       <hoverable-element></hoverable-element>
       <hoverable-element>
-        <input/>
+        <input>
       </hoverable-element>
       <hoverable-element>
-        <span>Child</span
+        <span>Child</span>
       </hoverable-element>
     </section>
   </div>
 </body>
+
 </html>

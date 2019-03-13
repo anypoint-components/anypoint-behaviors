@@ -1,13 +1,25 @@
 {
-  "name": "anypoint-behaviors",
   "description": "Implements an element validated with Anypoint.AnypointValidatorBehavior for the Anypoint components",
-  "version": "2.0.0",
+  "keywords": [
+    "anypoint",
+    "behaviors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anypoint-web-components/anypoint-behaviors.git"
+  },
+  "name": "@anypoint-components/anypoint-behaviors",
+  "version": "3.0.0-preview.1",
   "license": "(C) MuleSoft. All rights reserved.",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1"
+    "@polymer/gen-typescript-declarations": "^1.6.1",
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/iron-test-helpers": "^3.0.0"
   },
-  "private": true,
-  "main": "anypoint-hoverable-behavior.html",
+  "main": "anypoint-hoverable-mixin.js",
   "author": "Pawel Psztyc",
   "scripts": {
     "lint": "polymer lint anypoint-hoverable-behavior.html",
@@ -15,12 +27,19 @@
     "test": "polymer test --plugin local",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/anypoint-web-components/anypoint-behaviors.git"
-  },
   "bugs": {
     "url": "https://github.com/anypoint-web-components/anypoint-behaviors/issues",
     "email": "arc@mulesoft.com"
+  },
+  "flat": true,
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "dependencies": {
+    "@advanced-rest-client/anypoint-styles": "^3.0.0-preview.2",
+    "@polymer/polymer": "^3.0.0"
   }
 }
